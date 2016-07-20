@@ -11809,7 +11809,7 @@ Hence we are classifying the input data to a discrete output. This is a classifi
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[66]:</div>
+<div class="prompt input_prompt">In&nbsp;[106]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Import libraries</span>
@@ -11861,7 +11861,7 @@ Hence we are classifying the input data to a discrete output. This is a classifi
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[67]:</div>
+<div class="prompt input_prompt">In&nbsp;[107]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Calculate number of students</span>
@@ -11924,7 +11924,7 @@ Graduation rate of the class: 67.09%
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[68]:</div>
+<div class="prompt input_prompt">In&nbsp;[108]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Extract feature columns</span>
@@ -12006,7 +12006,7 @@ Feature values:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[69]:</div>
+<div class="prompt input_prompt">In&nbsp;[109]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">preprocess_features</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
@@ -12077,7 +12077,7 @@ Feature values:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[70]:</div>
+<div class="prompt input_prompt">In&nbsp;[110]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.cross_validation</span> <span class="kn">import</span> <span class="n">train_test_split</span>
@@ -12243,7 +12243,7 @@ The leftmost layer, known as the input layer, consists of a set of neurons repre
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[71]:</div>
+<div class="prompt input_prompt">In&nbsp;[111]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">train_classifier</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">):</span>
@@ -12316,7 +12316,7 @@ The leftmost layer, known as the input layer, consists of a set of neurons repre
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[98]:</div>
+<div class="prompt input_prompt">In&nbsp;[112]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Import the three supervised learning models from sklearn</span>
@@ -12325,20 +12325,16 @@ The leftmost layer, known as the input layer, consists of a set of neurons repre
 <span class="kn">from</span> <span class="nn">sklearn.neural_network</span> <span class="kn">import</span> <span class="n">MLPClassifier</span>
 
 <span class="c1"># Initialize the three models</span>
-<span class="n">clf_A</span> <span class="o">=</span> <span class="n">svm</span><span class="o">.</span><span class="n">SVC</span><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">clf_A</span> <span class="o">=</span> <span class="n">svm</span><span class="o">.</span><span class="n">SVC</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">clf_B</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">()</span>
-<span class="n">clf_C</span> <span class="o">=</span> <span class="n">MLPClassifier</span><span class="p">(</span><span class="n">algorithm</span><span class="o">=</span><span class="s1">&#39;l-bfgs&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">1e-5</span><span class="p">,</span> <span class="n">hidden_layer_sizes</span><span class="o">=</span><span class="p">(</span><span class="mi">60</span><span class="p">,),</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">clf_C</span> <span class="o">=</span> <span class="n">MLPClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="c1"># Set up the training set sizes</span>
-<span class="k">for</span> <span class="n">size</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">]:</span>
 <span class="c1"># Execute the &#39;train_predict&#39; function for each classifier and each training set size</span>
-    <span class="n">train_predict</span><span class="p">(</span><span class="n">clf_A</span><span class="p">,</span> <span class="n">X_train</span><span class="p">[:</span><span class="n">size</span><span class="p">],</span> <span class="n">y_train</span><span class="p">[:</span><span class="n">size</span><span class="p">],</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
-    
-<span class="k">for</span> <span class="n">size</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">]:</span>
-    <span class="n">train_predict</span><span class="p">(</span><span class="n">clf_B</span><span class="p">,</span> <span class="n">X_train</span><span class="p">[:</span><span class="n">size</span><span class="p">],</span> <span class="n">y_train</span><span class="p">[:</span><span class="n">size</span><span class="p">],</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
-    
-<span class="k">for</span> <span class="n">size</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">]:</span>
-    <span class="n">train_predict</span><span class="p">(</span><span class="n">clf_C</span><span class="p">,</span> <span class="n">X_train</span><span class="p">[:</span><span class="n">size</span><span class="p">],</span> <span class="n">y_train</span><span class="p">[:</span><span class="n">size</span><span class="p">],</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">clf</span> <span class="ow">in</span> <span class="p">[</span><span class="n">clf_A</span><span class="p">,</span> <span class="n">clf_B</span><span class="p">,</span> <span class="n">clf_C</span><span class="p">]:</span>
+    <span class="k">for</span> <span class="n">size</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">]:</span>
+        <span class="n">train_predict</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">X_train</span><span class="p">[:</span><span class="n">size</span><span class="p">],</span> <span class="n">y_train</span><span class="p">[:</span><span class="n">size</span><span class="p">],</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+        <span class="k">print</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>
 </pre></div>
 
 </div>
@@ -12352,59 +12348,77 @@ The leftmost layer, known as the input layer, consists of a set of neurons repre
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Training a SVC using a training set size of 100. . .
-Trained model in 0.0053 seconds
-Made predictions in 0.0005 seconds.
-F1 score for training set: 0.9804.
-Made predictions in 0.0004 seconds.
-F1 score for test set: 0.6207.
+Trained model in 0.0084 seconds
+Made predictions in 0.0036 seconds.
+F1 score for training set: 0.9048.
+Made predictions in 0.0020 seconds.
+F1 score for test set: 0.7248.
+
+
 Training a SVC using a training set size of 200. . .
-Trained model in 0.0230 seconds
-Made predictions in 0.0013 seconds.
-F1 score for training set: 0.8963.
-Made predictions in 0.0007 seconds.
-F1 score for test set: 0.7328.
-Training a SVC using a training set size of 300. . .
-Trained model in 0.1041 seconds
-Made predictions in 0.0027 seconds.
-F1 score for training set: 0.8678.
-Made predictions in 0.0009 seconds.
-F1 score for test set: 0.7368.
-Training a KNeighborsClassifier using a training set size of 100. . .
-Trained model in 0.0005 seconds
-Made predictions in 0.0017 seconds.
-F1 score for training set: 0.8957.
+Trained model in 0.0070 seconds
+Made predictions in 0.0040 seconds.
+F1 score for training set: 0.8854.
 Made predictions in 0.0016 seconds.
+F1 score for test set: 0.7101.
+
+
+Training a SVC using a training set size of 300. . .
+Trained model in 0.0088 seconds
+Made predictions in 0.0068 seconds.
+F1 score for training set: 0.8758.
+Made predictions in 0.0023 seconds.
+F1 score for test set: 0.7246.
+
+
+Training a KNeighborsClassifier using a training set size of 100. . .
+Trained model in 0.0004 seconds
+Made predictions in 0.0018 seconds.
+F1 score for training set: 0.8957.
+Made predictions in 0.0018 seconds.
 F1 score for test set: 0.7259.
+
+
 Training a KNeighborsClassifier using a training set size of 200. . .
-Trained model in 0.0005 seconds
-Made predictions in 0.0033 seconds.
-F1 score for training set: 0.8754.
-Made predictions in 0.0021 seconds.
-F1 score for test set: 0.7368.
-Training a KNeighborsClassifier using a training set size of 300. . .
 Trained model in 0.0007 seconds
-Made predictions in 0.0065 seconds.
+Made predictions in 0.0039 seconds.
+F1 score for training set: 0.8754.
+Made predictions in 0.0022 seconds.
+F1 score for test set: 0.7368.
+
+
+Training a KNeighborsClassifier using a training set size of 300. . .
+Trained model in 0.0009 seconds
+Made predictions in 0.0070 seconds.
 F1 score for training set: 0.8764.
-Made predictions in 0.0026 seconds.
+Made predictions in 0.0029 seconds.
 F1 score for test set: 0.7442.
+
+
 Training a MLPClassifier using a training set size of 100. . .
-Trained model in 0.0743 seconds
+Trained model in 0.0146 seconds
 Made predictions in 0.0006 seconds.
-F1 score for training set: 1.0000.
-Made predictions in 0.0004 seconds.
-F1 score for test set: 0.6667.
+F1 score for training set: 0.8636.
+Made predictions in 0.0005 seconds.
+F1 score for test set: 0.7248.
+
+
 Training a MLPClassifier using a training set size of 200. . .
-Trained model in 0.2913 seconds
+Trained model in 0.0225 seconds
 Made predictions in 0.0010 seconds.
-F1 score for training set: 1.0000.
-Made predictions in 0.0004 seconds.
-F1 score for test set: 0.7107.
+F1 score for training set: 0.8260.
+Made predictions in 0.0005 seconds.
+F1 score for test set: 0.7297.
+
+
 Training a MLPClassifier using a training set size of 300. . .
-Trained model in 0.4015 seconds
-Made predictions in 0.0012 seconds.
-F1 score for training set: 0.9976.
-Made predictions in 0.0004 seconds.
-F1 score for test set: 0.7227.
+Trained model in 0.0220 seconds
+Made predictions in 0.0014 seconds.
+F1 score for training set: 0.8275.
+Made predictions in 0.0006 seconds.
+F1 score for test set: 0.7297.
+
+
 </pre>
 </div>
 </div>
@@ -12441,24 +12455,24 @@ F1 score for test set: 0.7227.
 <tbody>
 <tr>
 <td style="text-align:center">100</td>
-<td style="text-align:center">0.0063</td>
-<td style="text-align:center">0.0007</td>
-<td style="text-align:center">0.9804</td>
-<td style="text-align:center">0.6207</td>
+<td style="text-align:center">0.0015</td>
+<td style="text-align:center">0.0009</td>
+<td style="text-align:center">0.9048</td>
+<td style="text-align:center">0.7248</td>
 </tr>
 <tr>
 <td style="text-align:center">200</td>
-<td style="text-align:center">0.0356</td>
-<td style="text-align:center">0.0018</td>
-<td style="text-align:center">0.8963</td>
-<td style="text-align:center">0.7328</td>
+<td style="text-align:center">0.0041</td>
+<td style="text-align:center">0.0031</td>
+<td style="text-align:center">0.8854</td>
+<td style="text-align:center">0.7101</td>
 </tr>
 <tr>
 <td style="text-align:center">300</td>
-<td style="text-align:center">0.1073</td>
-<td style="text-align:center">0.0027</td>
-<td style="text-align:center">0.8678</td>
-<td style="text-align:center">0.7368</td>
+<td style="text-align:center">0.0084</td>
+<td style="text-align:center">0.0065</td>
+<td style="text-align:center">0.8758</td>
+<td style="text-align:center">0.7246</td>
 </tr>
 </tbody>
 </table>
@@ -12509,24 +12523,24 @@ F1 score for test set: 0.7227.
 <tbody>
 <tr>
 <td style="text-align:center">100</td>
-<td style="text-align:center">0.0681</td>
-<td style="text-align:center">0.0007</td>
-<td style="text-align:center">1.0000</td>
-<td style="text-align:center">0.6667</td>
+<td style="text-align:center">0.0159</td>
+<td style="text-align:center">0.0006</td>
+<td style="text-align:center">0.8636</td>
+<td style="text-align:center">0.7248</td>
 </tr>
 <tr>
 <td style="text-align:center">200</td>
-<td style="text-align:center">0.2903</td>
+<td style="text-align:center">0.0219</td>
 <td style="text-align:center">0.0009</td>
-<td style="text-align:center">1.0000</td>
-<td style="text-align:center">0.7107</td>
+<td style="text-align:center">0.8260</td>
+<td style="text-align:center">0.7297</td>
 </tr>
 <tr>
 <td style="text-align:center">300</td>
-<td style="text-align:center">0.3954</td>
-<td style="text-align:center">0.0012</td>
-<td style="text-align:center">0.9976</td>
-<td style="text-align:center">0.7227</td>
+<td style="text-align:center">0.0210</td>
+<td style="text-align:center">0.0013</td>
+<td style="text-align:center">0.8275</td>
+<td style="text-align:center">0.7297</td>
 </tr>
 </tbody>
 </table>
@@ -12560,15 +12574,14 @@ F1 score for test set: 0.7227.
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
-<p>SVM is my choice.</p>
+<p>Multi-layer Perceptron classifier model is my choice.</p>
 <ul>
-<li>Because it cost money to run these algorithms on a third party vendor's computers, we need to consider not just the F1 score performance, but the computation resources each algorithm needs to use. Since the board of supervisors has asked the most effective model that uses the least amount of computation costs to save on the budget, we can use SVM over KNN. KNN also needs to keep in memory all the input data, which might be a problem if students increase a lot. SVM is memory efficient.</li>
-<li>KNN is twice as expensive as SVM for making predictions on new data. This is an online/realtime service, so we might get many queries per second. The prediction time should be low.</li>
-<li>I expect we need to train the model again only when the course period is over, so training time can be relatively high.</li>
+<li>Because it cost money to run these algorithms on a third party vendor's computers, we need to consider not just the F1 score performance, but the computation resources each algorithm needs to use. Since the board of supervisors has asked the most effective model that uses the least amount of computation costs to save on the budget, we can use Neural Networks over KNN. KNN also needs to keep in memory all the input data, which might be a problem if students increase a lot. Neural Network is more memory efficient.</li>
+<li>KNN is three times as expensive as Neural Network for making predictions on new data. This is an online/realtime service, so we might get many queries per second. The prediction time should be low.</li>
+<li>I expect we need to train the model again only when the course period is over, so training time is allowed to be relatively high.</li>
 </ul>
-<p>SVM might not perform as good as Neural Network in some cases. In this case NN suffers from overfitting and we would need to tune the neural network iterations and hidden layers.</p>
-<p>Model reshaping could improove SVM computational performance. It consists in selecting only a portion of the available features to fit a model.</p>
-<p>Scaling needs to be used whenever our classifier considers differences in multiple features simultaneously, like SVM.
+<p>SVM might not perform as good as Neural Network in some cases. In this case SVM suffers from overfitting as the F1 score in training set is much higher than on test set.</p>
+<p>Scaling needs to be used whenever our classifier considers differences in multiple features simultaneously, like NN.
 It could be the case that this data is already mostly normally distributed and equivalently scaled. In that case, scaling won't make a big difference in performance, but it may be hard to say whether this is the case beforehand.</p>
 <p>The kernel function that is actually performing better for this kind of problem is the Linear Function rather than the Radial Basis function.</p>
 
@@ -12591,18 +12604,28 @@ It could be the case that this data is already mostly normally distributed and e
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
-<p>SVM model can determine effectively, based on individual features, the student current position.
-The SVM performance has shown to increase as the number of classified students increase.
-This choise is effective given our student input data.
-It is also versatile as we can tune the algorithm parameters for reducing the impact of unbalanced input data.</p>
-<p>We describe how an SVM is trained and how the model makes predictions. Thus please discuss the  and the kernel trick and how an SVM actually makes a prediction. As a straight forward way to explain the algorithm is with a concrete example with the students in this dataset. Thus the passing students could be blue and red the failing students...</p>
-<p>Our algorithm distinguish between the 2 types of stundents in input data, "passing" and "not passing".
-Our algorithm tries to find a maximum margin that separates the dataset in two groups.
-Students have many attributes, so the curve that separated the two groups might not be linear.
-It is called hyper-plane since it is n-dimensional curve.
-Our algorithm uses a function called "kernel function" to build a new feature, based on the attributes provided for each student, to find an hyperplane that reduce outliers and classifies well the data.
-"kernel functions" takes low dimensional input space and transform it to a higher dimensional space. For example it converts not separable problem to separable problem, these functions are called kernels. It is mostly useful in non-linear separation problem, doing data transformations.</p>
-<p>Once we have found this hyper-plane, we can analyze new data attributes and make predictions if the student is passing or not.</p>
+<p>Our model works like a human brain, and can be described as a biological neural network.
+Like biological neural network, it is an interconnected web of neurons transmitting signals.
+The input informations, which are our student characteristics, like sex, family size, address, are processed
+collectively, in parallel throughout a network of nodes (the nodes, in this case, being neurons), like the one below.</p>
+<p><img src="http://www.webpages.ttu.edu/dleverin/neural_network/fig_3p5_typical_network_NET3.jpg" width="300"></p>
+<p>For example, let’s take the "passing" and "not passing" students recognition example.
+We show the network model a set of students, and the network already knows the characteristics associated with each student.
+The network makes its guesses, then we provide the network model with the answers.
+The network can then compare its answers to the known “correct” ones and make adjustments according to its errors.</p>
+<p>The idea of the perceptron in closely related to the biological neuron.</p>
+<p><img src="http://www.webpages.ttu.edu/dleverin/neural_network/fig_3p6_neurons_NEURON4.jpg" width="300"></p>
+<p>A perceptron is the simplest neural network possible: a neural network model of a single neuron. A perceptron consists of one or more inputs (student input data), a processor, and a single output (student position). 
+Weights can be imagined as the "sensitivity" to that student attribute.</p>
+<p><img src="http://natureofcode.com/book/imgs/chapter10/ch10_03.png" width="500"></p>
+<p>To summarize, the perceptron “classifies” input values as either 1 or 0, according to the following rule:
+The perceptron’s binary output is determined by summing the products of inputs and their respective weight values. Then a variable threshold value is used: if the linear sum of the input/weight products is greater than a threshold value (theta), the output of the system is 1 (otherwise, a 0 is returned).
+The output unit is thus said to be, like the perceptron output unit, a threshold unit.</p>
+<p>If the output of a particular training case is labelled 1 when it should be labelled 0, the threshold value (theta) is increased by 1, and all weight values associated with inputs of 1 are decreased by 1. The opposite is performed if the output of a training case is labelled 0 when it should be labelled 1. No changes are made to the threshold value or weights if a particular training case is correctly classified.</p>
+<p>This training rule can be imagined as the rule that allows the whole network to train itself. The perceptron’s error can be defined as the difference between the desired answer and its guess. This rule is used to drive learning of the neural network, adjusting, in the end, the weights activating each perceptron threshold.</p>
+<p>In multilayered networks, error at neurons in the layer directly preceding the output layer is a function of the errors on all units that use its output.</p>
+<p><img src="http://3.bp.blogspot.com/-YjW7XIVYRtA/UmjeY_ysRvI/AAAAAAAAAKc/H_H3D9vCz1E/s1600/Selection_003.png" alt="back"></p>
+<p>The size of the hidden layer determines how input student attributes are mapped to new attributes that reflects better the prediction on output nodes.</p>
 
 </div>
 </div>
@@ -12633,7 +12656,7 @@ Our algorithm uses a function called "kernel function" to build a new feature, b
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[104]:</div>
+<div class="prompt input_prompt">In&nbsp;[117]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">grid_search</span>
@@ -12652,13 +12675,11 @@ Our algorithm uses a function called "kernel function" to build a new feature, b
 <span class="c1"># y_train = y_train.replace([&#39;yes&#39;, &#39;no&#39;], [1, 0])</span>
 
 <span class="c1"># Create the parameters list you wish to tune</span>
-<span class="n">parameters</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;kernel&#39;</span><span class="p">:[</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span> <span class="s1">&#39;rbf&#39;</span><span class="p">,</span> <span class="s1">&#39;sigmoid&#39;</span><span class="p">],</span>
-              <span class="s1">&#39;C&#39;</span><span class="p">:[</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">100.0</span><span class="p">],</span>
-              <span class="s1">&#39;random_state&#39;</span><span class="p">:[</span><span class="bp">None</span><span class="p">,</span><span class="mi">42</span><span class="p">],</span>
-              <span class="s1">&#39;class_weight&#39;</span><span class="p">:[</span><span class="bp">None</span><span class="p">,</span><span class="s1">&#39;balanced&#39;</span><span class="p">]}</span>
+<span class="n">parameters</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;alpha&#39;</span><span class="p">:[</span><span class="mf">0.000005</span><span class="p">,</span> <span class="mf">0.00001</span><span class="p">,</span> <span class="mf">0.00005</span><span class="p">,</span> <span class="mf">0.0001</span><span class="p">,</span> <span class="mf">0.0002</span><span class="p">,</span> <span class="mf">0.001</span><span class="p">],</span>
+              <span class="s1">&#39;hidden_layer_sizes&#39;</span><span class="p">:[</span><span class="mi">60</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">120</span><span class="p">]}</span>
 
 <span class="c1"># Initialize the classifier</span>
-<span class="n">clf</span> <span class="o">=</span> <span class="n">svm</span><span class="o">.</span><span class="n">SVC</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">clf</span> <span class="o">=</span> <span class="n">MLPClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="c1"># Make an f1 scoring function using &#39;make_scorer&#39; </span>
 <span class="n">f1_scorer</span> <span class="o">=</span> <span class="n">make_scorer</span><span class="p">(</span><span class="n">f1_score</span><span class="p">,</span> <span class="n">pos_label</span><span class="o">=</span><span class="s1">&#39;yes&#39;</span><span class="p">)</span>
@@ -12684,10 +12705,10 @@ Our algorithm uses a function called "kernel function" to build a new feature, b
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Made predictions in 0.0058 seconds.
-Tuned model has a training F1 score of 0.8258.
-Made predictions in 0.0020 seconds.
-Tuned model has a testing F1 score of 0.7248.
+<pre>Made predictions in 0.0013 seconds.
+Tuned model has a training F1 score of 0.8275.
+Made predictions in 0.0005 seconds.
+Tuned model has a testing F1 score of 0.7297.
 </pre>
 </div>
 </div>
@@ -12712,18 +12733,16 @@ Tuned model has a testing F1 score of 0.7248.
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
-<p>Tuned model has a training F1 score of 0.8258
-Tuned model has a testing F1 score of 0.7248
-The untuned model has a testing F1 score fo 0.7368</p>
-<p>The model has a relatively high score on training data but falls below the score fo the untuned model.
-There is no absolute guarantee that grid search will always find the absolute best model. This depends on not only choosing the correct metric and number of parameters in grid space, but if the sample size of the training data is sufficiently large enough to not only to train the model but also big enough to validate on.
-In this case grid search will determine the best model from the average score from training the model on two points and using one point as the validation. However as mentioned above if we have very few points to begin with and a lot of features, it wouldn't be statistically significant.</p>
-<p>Ordinary single split cross validation (rather than k-fold) doesn't give an accurate measure of the performance of the algorithm for this small a dataset. Indeed we find that what looked like the best model turned out to be the worst when we checked it using GridSearchCV (it was just the most accurate model on that particular data split but performed much worse on other splits).</p>
+<p>Tuned model has a training F1 score of 0.8275.
+Tuned model has a testing F1 score of 0.7297.
+The untuned model has a testing F1 score of 0.7297.</p>
+<p>The tuned Neural Network model has the same F1 score of the untuned model.
+The default hidden network size is 100. This seems to be already an optimal value for our data points.
+There is no absolute guarantee that grid search will always find better model parameters. This depends on not only choosing the correct metric and number of parameters in grid space, but if the sample size of the training data is sufficiently large enough to not only to train the model but also big enough to validate on.
+In this case grid search will determine the best model from the average score from training the model on training points and using test point as the validation. However as mentioned above if we have very few points to begin with and a lot of features, it wouldn't be statistically significant.</p>
 <p>The grid search algorithm exhaustively considers all parameter combinations of learning algorithm of the "validation set" to be able to tune or optimize the algorithm configuration.
-In particular the grid search technique is configured with a grid that specifiess how the search method computes the parameters in the ranges chosen for the model.
-The parameter C, common to all SVM kernels, trades off misclassification of training examples against simplicity of the decision surface. A low C makes the decision surface smooth, while a high C aims at classifying all training examples correctly. Gamma defines how much influence a single training example has. The larger gamma is, the closer other examples must be to be affected.
-Proper choice of C and gamma is critical to the SVM’s performance.</p>
-<p>Also by partitioning the available data like before question 2, we reduce the number of samples which can be used for learning the model, and the model prevision score can depend on a particular random choice for the pair of (train, validation) sets. A solution to this problem is a procedure called cross-validation (CV for short). A test set should still be held out for final evaluation, but the validation set is no longer needed when doing CV.
+In particular the grid search technique is configured with a grid that specifiess how the search method computes the parameters in the ranges chosen for the model.</p>
+<p>Also by partitioning the available data as done before question 2, we reduce the number of samples which can be used for learning the model, and the model prevision score can depend on a particular random choice for the pair of (train, validation) sets. A solution to this problem is a procedure called cross-validation (CV for short). A test set should still be held out for final evaluation, but the validation set is no longer needed when doing CV.
 In the basic approach, called k-fold CV, the training set is split into k smaller sets. The following procedure is followed for each of the k “folds”:</p>
 <ul>
 <li>A model is trained using "k-1" of the folds as training data;</li>
