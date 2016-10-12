@@ -6,7 +6,7 @@ from simulator import Simulator
 class LearningAgent(Agent):
     """An agent that learns to drive in the smartcab world."""
 
-    def __init__(self, env, epsilon = 0.5, alpha = 0.6, gamma = 0.4):
+    def __init__(self, env, epsilon = 0.7, alpha = 0.6, gamma = 0.4):
         super(LearningAgent, self).__init__(env)  # sets self.env = env, state = None, next_waypoint = None, and a default color
         self.color = 'red'  # override color
         self.planner = RoutePlanner(self.env, self)  # simple route planner to get next_waypoint
@@ -15,7 +15,7 @@ class LearningAgent(Agent):
         self.Q = {} # dictionary with index made by tuble (state, action) and values of float
         
         # Defaults used for setting learning weights
-        self.exploration_rate = epsilon # conveges to the inverse of the total number of trip
+        self.exploration_rate = epsilon # converges to the inverse of the total number of trips
         self.learning_rate = alpha # learning rate
         self.discount_factor = gamma # discount
         
@@ -140,7 +140,7 @@ def run():
     # NOTE: You can set enforce_deadline=False while debugging to allow longer trips
 
     # Now simulate it
-    sim = Simulator(e, update_delay=0.1, display=True)  # create simulator (uses pygame when display=True, if available)
+    sim = Simulator(e, update_delay=0.0, display=True)  # create simulator (uses pygame when display=True, if available)
     # NOTE: To speed up simulation, reduce update_delay and/or set display=False
 
     sim.run(n_trials=100)  # run for a specified number of trips
