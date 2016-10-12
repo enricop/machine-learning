@@ -32,11 +32,6 @@ class LearningAgent(Agent):
         self.trip_penalty = 0 #points lost for single trip
         self.trip_reward = 0  #points gained for a single trip
 
-    def get_exploration_rate(self):
-        ''' This value decreases for each of the completed trips
-            It is used for initial choice between greedy and random moves'''
-        return float(self.exploration_rate) / (len(self.trip_rewards) + float(self.exploration_rate))
-
     def greedy_action(self, state):
         '''returns the action with the best known q value for a given state.'''
         Qvals = [self.Q.get((state, action), 0.0) for action in self.directions]
@@ -49,16 +44,14 @@ class LearningAgent(Agent):
         return self.directions[direction_idx]
 
     def choose_action(self, state):
-        '''decide if we should take a random action or a greedy action.'''
-        if random.random() < self.get_exploration_rate(): # Compare epsilon with random 0..1 value
+        '''decide if we should take a random action or a greedy action.
+           This exploration_rate value decreases for each of the completed trips
+            It is used for initial choice between greedy and random moves'''
+        if random.random() < (float(self.exploration_rate) / (len(self.trip_rewards) + float(self.exploration_rate))): # Compare epsilon with random 0..1 value
             action = random.choice(self.directions) # Random action for exploring the enviroment
         else:
             action =  self.greedy_action(state) #Pick the best value for Q - Greedy action
         return action
-
-    def set_Qval(self, state, action, value):
-        '''Util to set a q value for a given state and action tuple.'''
-        self.Q[(state, action)] = value
 
     def learnQ(self, prev_state, action, reward, next_state):
         '''determine q val and update lookup.'''
@@ -78,7 +71,7 @@ class LearningAgent(Agent):
             next_val = prev_val + (self.learning_rate * (learned_val - prev_val))
         
         # set the new qval for the previous state
-        self.set_Qval(prev_state, action, next_val)
+        self.Q[(prev_state, action)] = next_val
 
     def update(self, t):
         '''main loop called at the begining of each state'''
