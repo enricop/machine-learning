@@ -46,7 +46,8 @@ class LearningAgent(Agent):
     def choose_action(self, state):
         '''decide if we should take a random action or a greedy action.
            This exploration_rate value decreases for each of the completed trips
-            It is used for initial choice between greedy and random moves'''
+           It is used for initial choice between greedy and random moves
+           The initial rate goes down very quickly so greedy actions are chosen after some initial moves'''
         if random.random() < (float(self.exploration_rate) / (len(self.trip_rewards) + float(self.exploration_rate))): # Compare epsilon with random 0..1 value
             action = random.choice(self.directions) # Random action for exploring the enviroment
         else:
